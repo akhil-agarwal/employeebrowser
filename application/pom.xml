@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>employeebrowser - Application</name>
+    <description>employeebrowser - Application</description>
+
+    <groupId>com.sap</groupId>
+    <artifactId>employeebrowser-application</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <parent>
+        <groupId>com.sap.cloud.s4hana.starters</groupId>
+        <artifactId>scp-neo-javaee6</artifactId>
+        <version>1.0.0</version>
+        <relativePath />
+    </parent>
+
+    <properties>
+        <!-- if you are behind a proxy use the following two properties to configure your proxy. Default: None -->
+        <proxy.host />
+        <proxy.port />
+        <non.proxy.hosts />
+
+        <!-- this is the location of your local SCP Neo runtime -->
+        <scp.sdkInstallPath>${project.basedir}/scp/sdk-${scp.sdkVersion}</scp.sdkInstallPath>
+        <scp.sdkLocalServerContentPath>${project.basedir}/localServerContent</scp.sdkLocalServerContentPath>
+        <scp.sdkErpEndpoint>${scp.sdkInstallPath}/server/config_master/service.destinations/destinations/ErpQueryEndpoint</scp.sdkErpEndpoint>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana.cloudplatform</groupId>
+            <artifactId>scp-neo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana</groupId>
+            <artifactId>s4hana-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

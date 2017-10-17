@@ -1,0 +1,12 @@
+---
+systems:
+  - alias: "sfsf"
+    uri: "https://apisalesdemo4.successfactors.com/"
+
+erp:
+  default: "erp"
+  systems:
+    - alias: "erp"
+      uri: "https://erpqw9a74d7a9d1.hana.ondemand.com/"
+      sapClient: "715"
+      systemId: "QW9"

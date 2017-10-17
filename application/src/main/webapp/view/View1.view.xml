@@ -1,0 +1,41 @@
+<mvc:View controllerName="employee-browser-frontend.controller.View1" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="Employee Browser">
+				<content>
+					<List items="{
+								path: '/',
+								sorter: {
+									path: 'companyCode',
+									descending: false,
+									group: true
+								}
+							}"
+						  headerText="Employees by Company Code"
+					>
+						<CustomListItem
+								title="{costCenter}"
+								description="{costCenter}" class="sapUiResponsiveMargin">
+
+							<Panel expandable="true" expanded="false" headerText="Cost center {costCenter}" width="auto">
+								<List headerText="Employees" items="{employees}" collapsed="true">
+									<ObjectListItem title="{personIdExternal}" type="Active">
+										<firstStatus>
+											<ObjectStatus text="{jobTitle}" />
+										</firstStatus>
+										<attributes>
+											<ObjectAttribute text="Department: {department}" />
+											<ObjectAttribute text="Division: {division}" />
+											<ObjectAttribute text="Employment Type: {employmentType}" />
+											<ObjectAttribute text="Pay Grade: {payGrade}" />
+										</attributes>
+									</ObjectListItem>
+								</List>
+							</Panel>
+						</CustomListItem>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
